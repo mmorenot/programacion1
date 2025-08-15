@@ -5,6 +5,12 @@ let vidasEnemigo = 3
 
 
 function iniciarjuego() {
+    let sectionSeleccionarAtaque = document.getElementById('Seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'none' 
+
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'none'
+    
     let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.addEventListener ('click', SeleccionarMascotaJugador)
 
@@ -21,6 +27,12 @@ function iniciarjuego() {
 }
 
 function SeleccionarMascotaJugador() {
+    let sectionSeleccionarMascota = document.getElementById('Seleccionar-mascota')
+    sectionSeleccionarMascota.style.display = 'none' // la propiedad .display ayuda a ocultar seccion = none, la muestra = block
+    
+    let sectionSeleccionarAtaque = document.getElementById('Seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'block' // la propiedad .display ayuda a ocultar seccion = none, la muestra = block
+
     let inputHipodoge = document.getElementById("hipodoge")
     let inputCapipepo = document.getElementById("capipepo")
     let inputRatigueya = document.getElementById("ratigueya")
@@ -32,17 +44,25 @@ function SeleccionarMascotaJugador() {
    
     if (inputHipodoge.checked){
         spanMascotaJugador.innerHTML = "Hipodoge"
+        alert('Seleccionaste a Hipodoge')
     } else if (inputCapipepo.checked){
-        spanMascotaJugador.innerHTML = "Capipepo"  
+        spanMascotaJugador.innerHTML = "Capipepo"
+        alert('Seleccionaste a Capipepo') 
     } else if (inputRatigueya.checked){
         spanMascotaJugador.innerHTML = "Ratigueya" 
+        alert('Seleccionaste a Ratigueya')
     } else if (inputLangostelvis.checked){
         spanMascotaJugador.innerHTML = "Langostelvis"
+        alert('Seleccionaste a Langostelvis')
     } else if (inputTucapalma.checked){
         spanMascotaJugador.innerHTML = "Tucapalma"
+        alert('Seleccionaste a Tucapalma')
     } else if (inputPydos.checked){
-        spanMascotaJugador.innerHTML = "Pydos" 
+        spanMascotaJugador.innerHTML = "Pydos"
+        alert('Seleccionaste a Pydos') 
     } else {
+        sectionSeleccionarAtaque.style.display = 'none'
+        sectionSeleccionarMascota.style.display = 'block'
         alert("Debes seleccionar Mascota")  
     }
 
@@ -159,6 +179,9 @@ function crearMensajeFinal (resultadoFinal){
     botonAgua.disabled = true
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.disabled = true
+
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'block'
 }
 
 function reiniciarJuego() {
