@@ -96,17 +96,19 @@ function ataqueFuego() {
     ataqueAletorioEnemigo()
     
 }
+
 function ataqueAgua() {
     ataqueJugador = 'AGUA'
     ataqueAletorioEnemigo()
 }
+
 function ataqueTierra() {
     ataqueJugador = 'TIERRA'
     ataqueAletorioEnemigo()
 }
 
 function ataqueAletorioEnemigo (){
-    let ataqueAleatorio = aleatorio (1,3) 
+    let ataqueAleatorio = aleatorio (1,3)  
 
     if (ataqueAleatorio == 1) {
         ataqueEnemigo = 'FUEGO'
